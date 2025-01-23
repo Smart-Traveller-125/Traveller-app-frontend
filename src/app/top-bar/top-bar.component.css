@@ -1,0 +1,21 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures logo, nav, and button are spaced out */
+  padding: 10px; /* Add padding to give it some space */
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 20px; /* Adjust the logo size if needed */
+}
+
+.nav {
+  flex-grow: 1; /* Allows the nav bar to grow and fill available space */
+  text-align: center; /* Center the nav items */
+}
+
+.signup {
+  margin-left: auto; /* Push the button to the far right */
+}
+
