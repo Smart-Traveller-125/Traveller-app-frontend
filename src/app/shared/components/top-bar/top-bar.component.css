@@ -13,9 +13,12 @@
 .nav {
   flex-grow: 1; /* Allows the nav bar to grow and fill available space */
   text-align: center; /* Center the nav items */
+  margin-left: -2%;
+  width: 75%;
 }
 
 .signup {
-  margin-left: auto; /* Push the button to the far right */
+  margin-left: auto;
+  border-radius: 20%;
 }
 
