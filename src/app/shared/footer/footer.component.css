@@ -1,0 +1,156 @@
+.travel-footer {
+  background: linear-gradient(to right, #2c3e50, #3498db);
+  color: #ffffff;
+  padding-top: 70px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+  padding-bottom: 50px;
+}
+
+.footer-info h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin-right: 10px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #ffffff;
+  color: #3498db;
+  transform: translateY(-3px);
+}
+
+.contact-info {
+  line-height: 1.8;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #3498db;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-links a:before {
+  content: "→";
+  margin-right: 8px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  padding-left: 10px;
+}
+
+.footer-links a:hover:before {
+  opacity: 1;
+}
+
+.newsletter-form .input-group {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.newsletter-form input {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 10px 15px;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form button {
+  background: #3498db;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #2980b9;
+}
+
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+.terms-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.terms-links li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.terms-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.terms-links a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .terms-links {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .terms-links li {
+    margin: 0 10px;
+  }
+
+  .footer-bottom p {
+    text-align: center;
+  }
+}
+
+h4 {
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: 600;
+}

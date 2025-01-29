@@ -8,8 +8,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  @Input() title?: string;
-  @Input() value?: number;
+  @Input() statement?: string;
+  @Input() imagerurl?: string;
 
 
 }
