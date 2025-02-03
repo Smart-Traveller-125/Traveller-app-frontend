@@ -1,0 +1,45 @@
+<div class="card h-100">
+  <!-- Place Image -->
+  <img [src]="place.imageUrl" class="card-img-top" alt="{{place.name}}" style="height: 200px; object-fit: cover;" />
+
+  <!-- Card Body -->
+  <div class="card-body">
+    <!-- Place Name -->
+    <h5 class="card-title">{{place.name}}</h5>
+
+    <!-- Location Badges -->
+    <div class="mb-2">
+      <span class="badge bg-primary me-2">{{place.province}}</span>
+      <span class="badge bg-secondary me-2">{{place.district}}</span>
+      <span class="badge bg-info">{{place.area}}</span>
+    </div>
+
+    <!-- Star Rating Display -->
+    <div class="mb-2">
+      <span class="text-warning" *ngFor="let star of [1,2,3,4,5]">
+        <i class="bi" [ngClass]="star <= place.rating ? 'bi-star-fill' : 'bi-star'"></i>
+      </span>
+      <span class="ms-2">({{place.rating}})</span>
+    </div>
+
+    <!-- Star Rating Input (for user feedback) -->
+    <div class="mb-3">
+      <p class="mb-1">Rate this place:</p>
+      <div class="star-rating">
+        <span *ngFor="let star of [1,2,3,4,5]" (click)="ratePlace(star)" class="star">
+          <i class="bi" [ngClass]="star <= userRating ? 'bi-star-fill' : 'bi-star'"></i>
+        </span>
+      </div>
+      <button class="btn btn-sm btn-success mt-2" (click)="submitRating()">Submit Feedback</button>
+    </div>
+
+    <!-- Place Description -->
+    <p class="card-text">{{place.description}}</p>
+
+    <!-- Action Buttons -->
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary" (click)="viewHotels()">View Hotels</button>
+      <button class="btn btn-secondary" (click)="viewMap()">View Map</button>
+    </div>
+  </div>
+</div>

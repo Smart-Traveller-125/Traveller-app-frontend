@@ -1,0 +1,90 @@
+<div class="container mt-4">
+  <!-- Search and Filter Section -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <h2>Find Amazing Places</h2>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <!-- Search Bar -->
+            <div class="col-md-6 mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search places..."
+                [(ngModel)]="searchTerm"
+                (input)="searchPlaces()">
+            </div>
+
+            <!-- Location Filters -->
+            <div class="col-md-2 mb-3">
+              <select class="form-select" [(ngModel)]="selectedProvince" (change)="onProvinceChange()">
+                <option value="">Select Province</option>
+                <option *ngFor="let province of provinces" [value]="province">
+                  {{province}}
+                </option>
+              </select>
+            </div>
+
+            <div class="col-md-2 mb-3">
+              <select class="form-select" [(ngModel)]="selectedDistrict" (change)="onDistrictChange()"
+                      [disabled]="!selectedProvince">
+                <option value="">Select District</option>
+                <option *ngFor="let district of districts" [value]="district">
+                  {{district}}
+                </option>
+              </select>
+            </div>
+
+            <div class="col-md-2 mb-3">
+              <select class="form-select" [(ngModel)]="selectedArea"
+                      [disabled]="!selectedDistrict">
+                <option value="">Select Area</option>
+                <option *ngFor="let area of areas" [value]="area">
+                  {{area}}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="searchicon">
+            <button class="btn btn-primary">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Rated Places Section -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <h3>Top Rated Places</h3>
+    </div>
+  </div>
+
+  <!-- Places Grid -->
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let place of filteredPlaces">
+      <div class="card h-100">
+        <img [src]="place.imageUrl" class="card-img-top" alt="{{place.name}}" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">{{place.name}}</h5>
+          <div class="mb-2">
+            <span class="badge bg-primary me-2">{{place.province}}</span>
+            <span class="badge bg-secondary me-2">{{place.district}}</span>
+            <span class="badge bg-info">{{place.area}}</span>
+          </div>
+          <div class="mb-2">
+            <span class="text-warning" *ngFor="let star of [1,2,3,4,5]">
+              <i class="bi" [ngClass]="star <= place.rating ? 'bi-star-fill' : 'bi-star'"></i>
+            </span>
+            <span class="ms-2">({{place.rating}})</span>
+          </div>
+          <p class="card-text">{{place.description}}</p>
+          <button class="btn btn-primary" [routerLink]="['/viewdetails']" [state]="{ place: place }">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

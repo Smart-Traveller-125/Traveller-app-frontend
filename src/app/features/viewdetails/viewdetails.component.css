@@ -1,0 +1,26 @@
+.card {
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+/* place-card.component.css */
+.star-rating {
+  cursor: pointer;
+}
+
+.star-rating .star {
+  font-size: 1.5rem;
+  color: #ffc107; /* Yellow color for stars */
+  margin-right: 5px;
+}
+
+.star-rating .star:hover,
+.star-rating .star.active {
+  color: #ffc107; /* Highlight stars on hover */
+}
+
+.btn {
+  margin-top: 10px;
+}
